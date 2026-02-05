@@ -717,6 +717,7 @@ ul {
     text-align: center;
     transition: 0.2s;
     display: flex;
+    height: 50px;
     align-items: center;
     justify-content: center;
     gap: 8px;

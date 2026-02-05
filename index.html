@@ -237,21 +237,23 @@
                     </div>
                     <div class="card-content">
                         <div class="text-content">
-                            <h4>API 및 독립형 LLM 포렌식 아티팩트 분석</h4>
-                            <p class="sub-title">Comparative Analysis of LLM Artifacts</p>
+                            <h4>API 기반 LLM과 독립 실행형 LLM의 디지털포렌식 아티팩트 비교·분석 및 활용 방안 (KCI)</h4>
+                            <p class="sub-title">Comparative Analysis and Utilization of Digital Forensic Artifacts from
+                                API-based and Standalone LLMs</p>
                             <p class="desc">
-                                ChatGPT와 같은 API 기반 모델과 Llama 등의 독립형 모델이 남기는 아티팩트를 비교 분석하고, 수사 활용 방안을 제안한 연구입니다. (KCI 등재)
+                                본 논문은 Windows 환경에서 대규모 언어 모델(LLM)을 API 기반과 독립 실행형으로 구분하고, 디지털포렌식 관점에서 주요 아티팩트를 수집하고 분석하는
+                                방법을 비교·평가하였습니다.
                             </p>
                             <div class="project-specs">
                                 <div class="spec-row">
                                     <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">Research, Python, Pandas</span>
+                                    <span class="spec-value">Research, Degital Forensic, LLM Forensic</span>
                                 </div>
                                 <div class="spec-row">
                                     <span class="spec-label"># Role</span>
                                     <span class="spec-value">
-                                        · 모델별 아티팩트 비교 실험 설계<br>
-                                        · 실험 데이터 정제 및 논문 작성 (1저자)
+                                        · KCI: 디지털포렌식 연구 (제19권 제6호) - 1저자<br>
+                                        · 2025 한국디지털포렌식학회 동계학술대회 발표 및 수상
                                     </span>
                                 </div>
                             </div>
@@ -262,7 +264,7 @@
                                 <i class="fas fa-book"></i> Paper
                             </a>
                             <a href="./etc/files/동계학술대회.pdf" target="_blank" class="btn-action secondary">
-                                <i class="fas fa-chalkboard-user"></i> PPT
+                                <i class="fas fa-chalkboard-user"></i> PPT (학술대회)
                             </a>
                         </div>
                     </div>
@@ -280,18 +282,20 @@
                             <h4>피싱 웹 사이트 탐지 시스템: <img src="./etc/images/logo.png" alt="Wave to WWW" width="150px"></h4>
                             <p class="sub-title">Phishing Detection System</p>
                             <p class="desc">
-                                URL 및 웹 페이지 콘텐츠를 실시간으로 분석하여 피싱 여부를 판별하는 머신러닝 기반 보안 서비스입니다.
+                                wave to www는 사용자 중심의 피싱 탐지 서비스입니다. 단순히 위험 여부만을 알려주는 기존 방식에서 한 걸음 더
+                                나아가, AI 분석과 룰 기반 코드 분석을 결합하여 왜 위험한지에 대한 근거까지 함께 제공합니다.
                             </p>
                             <div class="project-specs">
                                 <div class="spec-row">
                                     <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">Python, Flask, Scikit-learn, Chrome Ext</span>
+                                    <span class="spec-value">Python, JavaScript, Scikit-learn, Pandas</span>
                                 </div>
                                 <div class="spec-row">
                                     <span class="spec-label"># Role</span>
                                     <span class="spec-value">
-                                        · 피싱 탐지 AI 모델링 (Random Forest)<br>
-                                        · 백엔드 API 및 확장프로그램 연동
+                                        · 피싱 탐지 AI 모델링: Random Forest(정확도 96.22%)<br>
+                                        · 룰 기반 코드 작성 (URL 패턴, JavaScript 정적/동적 분석) <br>
+                                        · Web Service 및 Chrome Extension 디자인
                                     </span>
                                 </div>
                             </div>
@@ -304,7 +308,7 @@
                                 class="btn-action secondary">
                                 <i class="fab fa-github"></i> Git
                             </a>
-                            <a href="./files/capstone_ppt.pdf" target="_blank" class="btn-action secondary">
+                            <a href="./etc/files/WavetoWWW.pdf" target="_blank" class="btn-action secondary">
                                 <i class="fas fa-file-powerpoint"></i> PPT
                             </a>
                         </div>
@@ -317,21 +321,23 @@
                     </div>
                     <div class="card-content">
                         <div class="text-content">
-                            <h4>LLM 아티팩트 자동 추출 도구</h4>
-                            <p class="sub-title">extract_llm Automation Tool</p>
+                            <h4>LLM 포렌식 아티팩트 추출용 자동화 스크립트</h4>
+                            <p class="sub-title">Automated Script for LLM Forensic Artifact Extraction</p>
                             <p class="desc">
-                                Windows 환경에서 실행된 다양한 LLM 서비스의 아티팩트를 자동으로 식별하고 수집하여 분석 효율을 높이는 파이썬 도구입니다.
-                            </p>
+                                E01 디스크 이미지에서 LLM 애플리케이션(ChatGPT, Claude, LM Studio, Jan, 미정의 LLM 등)의 실행 흔적 / 사용자 정보 /
+                                프롬프트 / 파일 업로드 / 네트워크 아티팩트를 자동 수집·분류하는 포렌식 도구입니다.
                             <div class="project-specs">
                                 <div class="spec-row">
                                     <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">Python, SQLite, Regex, Windows API</span>
+                                    <span class="spec-value">Python, dfVFS, pytsk3, libewf, JSON Pattern Matching</span>
                                 </div>
                                 <div class="spec-row">
                                     <span class="spec-label"># Role</span>
                                     <span class="spec-value">
-                                        · 윈도우 아티팩트 경로 분석<br>
-                                        · 데이터 추출 자동화 스크립트 개발 (100%)
+                                        · E01 이미지 자동 파싱 및 NTFS 파티션 탐지<br>
+                                        · 윈도우 LLM 앱 아티팩트 경로 패턴 분석 및 정의<br>
+                                        · dfVFS 기반 E01 이미지 파싱 엔진 구현<br>
+                                        · 카테고리별 자동 추출 로직 및 CLI 개발 (100%)
                                     </span>
                                 </div>
                             </div>
@@ -347,31 +353,34 @@
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="./images/whitehat_project.jpg" alt="화이트햇스쿨 프로젝트">
+                        <img src="./etc/images/whitehat.png" alt="화이트햇스쿨 프로젝트">
                     </div>
                     <div class="card-content">
                         <div class="text-content">
-                            <h4>Windows 생성형 AI 아티팩트 분석</h4>
+                            <h4>윈도우 악성 프로그램 탐지 및 분석 연구</h4>
                             <p class="sub-title">Whitehat School Project</p>
                             <p class="desc">
-                                PC 버전 카카오톡, 슬랙 등 메신저 내 AI 기능 사용 흔적을 추적하고 타임라인을 재구성하는 포렌식 기법을 연구했습니다.
+                                Windows 환경에서 사용자 행위 기반의 아티팩트 분석 기법을 확립하고, 디지털 흔적을 통해 악용된 프로그램을 탐지·분석한 포렌식 연구 프로젝트입니다.
                             </p>
                             <div class="project-specs">
                                 <div class="spec-row">
                                     <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">EnCase, NTFS Log Tracker, Python</span>
+                                    <span class="spec-value">FTK Imager, Autopsy, Wireshark, Registry Explorer, NTFS Log
+                                        Tracker, HxD</span>
                                 </div>
                                 <div class="spec-row">
                                     <span class="spec-label"># Role</span>
                                     <span class="spec-value">
-                                        · 메신저(Kakao, Slack) 캐시 정밀 분석<br>
-                                        · 타임라인 재구성 및 결과 보고서 작성
+                                        · 포렌식 도구 사용법 매뉴얼 작성 (FTK, Wireshark 등)<br>
+                                        · 악용 시나리오 구현 (피싱 이메일 생성 등) 및 증거 분석<br>
+                                        · 메신저, 생성형 AI 아티팩트 분석 (실행 흔적, 사용자 정보, 네트워크, 프롬프트 등)
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div class="card-actions">
-                            <a href="https://github.com/forensicbread" target="_blank" class="btn-action primary">
+                            <a href="https://github.com/forensicbread/WHS_forensicbread" target="_blank"
+                                class="btn-action primary">
                                 <i class="fab fa-github"></i> Repository
                             </a>
                         </div>
@@ -380,25 +389,28 @@
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="./images/dreamhack_thumb.jpg" alt="CTF Write-up">
+                        <img src="./etc/images/writeup.png" alt="CTF Write-up">
                     </div>
                     <div class="card-content">
                         <div class="text-content">
-                            <h4>Dreamhack CTF Write-ups</h4>
+                            <h4>Forensic CTF Write-ups</h4>
                             <p class="sub-title">Wargame & CTF Analysis</p>
                             <p class="desc">
-                                디지털 포렌식, 리버싱 등 다양한 분야의 워게임 문제를 해결하고 작성한 상세 분석 보고서(Write-up) 아카이브입니다.
+                                Dreamhack 플랫폼의 포렌식 카테고리 문제들을 풀이한 write-up 저장소입니다. 포렌식 조사 절차를 기반으로 각 문제의 분석 과정, 사용 도구,
+                                플래그 획득 방법을 체계적으로 기록했습니다.
                             </p>
                             <div class="project-specs">
                                 <div class="spec-row">
                                     <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">GDB, IDA Pro, Wireshark, Burp Suite</span>
+                                    <span class="spec-value">FTK Imager, Autopsy, Registry Explorer, DB Browser for
+                                        SQLite, HxD, PowerShell</span>
                                 </div>
                                 <div class="spec-row">
                                     <span class="spec-label"># Role</span>
                                     <span class="spec-value">
-                                        · 웹/시스템 해킹 취약점 분석<br>
-                                        · 문제 해결 과정 상세 보고서(Write-up) 작성
+                                        · Windows 시스템 포렌식 분석<br>
+                                        · 디지털 증거 수집 및 아티팩트 분석<br>
+                                        · 문제 해결 과정 상세 보고서(Write-up) 작성 및 문서화
                                     </span>
                                 </div>
                             </div>
@@ -407,6 +419,41 @@
                             <a href="https://github.com/bbibbi0425/Dreamhack" target="_blank"
                                 class="btn-action primary">
                                 <i class="fas fa-book-open"></i> View Write-ups
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="./etc/images/passsafe.png" alt="PASS SAFE">
+                    </div>
+                    <div class="card-content">
+                        <div class="text-content">
+                            <h4>우리의 비밀번호를 안전하게: Pass Safe</h4>
+                            <p class="sub-title">Keep your password safe: Pass Safe</p>
+                            <p class="desc">
+                                사용자가 자신의 비밀번호가 안전한지 검사하고, 강력하고 안전한 비밀번호를 생성 및 관리할 수 있는 서비스입니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">HTML, CSS, JavaScript, OpenSource(zxcvbn, Have I Been Pwned API) </span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · UI/UX 디자인 및 프론트엔드 개발<br>
+                                        · 비밀번호 보안 알고리즘 구현<br>
+                                        · API 연동 및 데이터 유출 확인 시스템 개발<br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/bbibbi0425/DKU_OpenSource" target="_blank"
+                                class="btn-action primary">
+                                <i class="fab fa-github"></i> Repository
                             </a>
                         </div>
                     </div>
