@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Security - Digital Forensics Portfolio</title>
+    <title>Kang Jimin - Portfolio</title>
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +16,7 @@
     <aside class="sidebar">
         <div class="profile-area">
             <h1 class="name">Kang Jimin</h1>
-            <p class="role">Digital Forensics Specialist</p>
+            <p class="role">Digital Forensics</p>
 
             <div class="social-links">
                 <a href="https://github.com/bbibbi0425" target="_blank"><i class="fab fa-github"></i></a>
@@ -30,7 +30,7 @@
                 <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#skills"><i class="fas fa-layer-group"></i> Skills</a></li>
-                <li><a href="#projects"><i class="fas fa-folder-open"></i> Write-ups</a></li>
+                <li><a href="#projects"><i class="fas fa-folder-open"></i> Projects</a></li>
             </ul>
         </nav>
 
@@ -61,7 +61,7 @@
 
             <div class="about-profile-container">
                 <div class="profile-photo-area">
-                    <img src="./etc/지민님.jpg" alt="강지민 프로필 사진">
+                    <img src="./etc/images/jimin.jpg" alt="강지민 프로필 사진">
                 </div>
 
                 <div class="profile-info-area">
@@ -228,41 +228,189 @@
 
         <section id="projects" class="section">
             <h3 class="section-title">Projects & Write-ups</h3>
+
             <div class="project-grid">
 
                 <article class="project-card">
-                    <div class="card-icon blue"><i class="fas fa-cloud"></i></div>
+                    <div class="card-image">
+                        <img src="./etc/images/paper.png" alt="LLM 포렌식 연구 논문">
+                    </div>
                     <div class="card-content">
-                        <h4>클라우드 침해 사고 분석</h4>
-                        <p class="sub-title">Cloud Forensics Case Study</p>
-                        <p class="desc">AWS 환경에서 발생한 데이터 유출 사고 로그를 분석하여 공격 벡터를 식별했습니다.</p>
-                        <a href="#" class="link-text">보고서 보기 <i class="fas fa-arrow-right"></i></a>
+                        <div class="text-content">
+                            <h4>API 및 독립형 LLM 포렌식 아티팩트 분석</h4>
+                            <p class="sub-title">Comparative Analysis of LLM Artifacts</p>
+                            <p class="desc">
+                                ChatGPT와 같은 API 기반 모델과 Llama 등의 독립형 모델이 남기는 아티팩트를 비교 분석하고, 수사 활용 방안을 제안한 연구입니다. (KCI 등재)
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">Research, Python, Pandas</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · 모델별 아티팩트 비교 실험 설계<br>
+                                        · 실험 데이터 정제 및 논문 작성 (1저자)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12553403" target="_blank"
+                                class="btn-action primary">
+                                <i class="fas fa-book"></i> Paper
+                            </a>
+                            <a href="./etc/files/동계학술대회.pdf" target="_blank" class="btn-action secondary">
+                                <i class="fas fa-chalkboard-user"></i> PPT
+                            </a>
+                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <div class="card-icon dark"><i class="fas fa-desktop"></i></div>
+                    <div class="card-image">
+                        <img src="./etc/images/web_safe.gif" alt="Wave to WWW 시연">
+                    </div>
                     <div class="card-content">
-                        <h4>랜섬웨어 아티팩트 분석</h4>
-                        <p class="sub-title">Ransomware Artifact Analysis</p>
-                        <p class="desc">특정 랜섬웨어 감염 시 생성되는 레지스트리 키와 파일 시스템 변화를 추적했습니다.</p>
-                        <a href="#" class="link-text">상세 내용 보기 <i class="fas fa-arrow-right"></i></a>
+                        <div class="text-content">
+                            <h4>피싱 웹 사이트 탐지: Wave to WWW</h4>
+                            <p class="sub-title">Phishing Detection System</p>
+                            <p class="desc">
+                                URL 및 웹 페이지 콘텐츠를 실시간으로 분석하여 피싱 여부를 판별하는 머신러닝 기반 보안 서비스입니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">Python, Flask, Scikit-learn, Chrome Ext</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · 피싱 탐지 AI 모델링 (Random Forest)<br>
+                                        · 백엔드 API 및 확장프로그램 연동
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions three-buttons">
+                            <a href="https://wavetowww.ccodung.com/" target="_blank" class="btn-action primary">
+                                <i class="fas fa-globe"></i> Web
+                            </a>
+                            <a href="https://github.com/bbibbi0425/DKU_Wave_to_WWW" target="_blank"
+                                class="btn-action secondary">
+                                <i class="fab fa-github"></i> Git
+                            </a>
+                            <a href="./files/capstone_ppt.pdf" target="_blank" class="btn-action secondary">
+                                <i class="fas fa-file-powerpoint"></i> PPT
+                            </a>
+                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <div class="card-icon gray"><i class="fas fa-flag"></i></div>
+                    <div class="card-image">
+                        <img src="./etc/images/extract_llm.gif" alt="extract_llm 실행 화면">
+                    </div>
                     <div class="card-content">
-                        <h4>CTF 문제 풀이 (Forensics)</h4>
-                        <p class="sub-title">2025 Whitehat Contest</p>
-                        <p class="desc">메모리 덤프 분석을 통해 은닉된 프로세스를 탐지하고 Flag를 획득한 과정입니다.</p>
-                        <a href="#" class="link-text">Github 이동 <i class="fas fa-arrow-right"></i></a>
+                        <div class="text-content">
+                            <h4>LLM 아티팩트 자동 추출 도구</h4>
+                            <p class="sub-title">extract_llm Automation Tool</p>
+                            <p class="desc">
+                                Windows 환경에서 실행된 다양한 LLM 서비스의 아티팩트를 자동으로 식별하고 수집하여 분석 효율을 높이는 파이썬 도구입니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">Python, SQLite, Regex, Windows API</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · 윈도우 아티팩트 경로 분석<br>
+                                        · 데이터 추출 자동화 스크립트 개발 (100%)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/bbibbi0425/Forensic_extract_llm" target="_blank"
+                                class="btn-action primary">
+                                <i class="fab fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="./images/whitehat_project.jpg" alt="화이트햇스쿨 프로젝트">
+                    </div>
+                    <div class="card-content">
+                        <div class="text-content">
+                            <h4>Windows 생성형 AI 아티팩트 분석</h4>
+                            <p class="sub-title">Whitehat School Project</p>
+                            <p class="desc">
+                                PC 버전 카카오톡, 슬랙 등 메신저 내 AI 기능 사용 흔적을 추적하고 타임라인을 재구성하는 포렌식 기법을 연구했습니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">EnCase, NTFS Log Tracker, Python</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · 메신저(Kakao, Slack) 캐시 정밀 분석<br>
+                                        · 타임라인 재구성 및 결과 보고서 작성
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/forensicbread" target="_blank" class="btn-action primary">
+                                <i class="fab fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="./images/dreamhack_thumb.jpg" alt="CTF Write-up">
+                    </div>
+                    <div class="card-content">
+                        <div class="text-content">
+                            <h4>Dreamhack CTF Write-ups</h4>
+                            <p class="sub-title">Wargame & CTF Analysis</p>
+                            <p class="desc">
+                                디지털 포렌식, 리버싱 등 다양한 분야의 워게임 문제를 해결하고 작성한 상세 분석 보고서(Write-up) 아카이브입니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">GDB, IDA Pro, Wireshark, Burp Suite</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · 웹/시스템 해킹 취약점 분석<br>
+                                        · 문제 해결 과정 상세 보고서(Write-up) 작성
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/bbibbi0425/Dreamhack" target="_blank"
+                                class="btn-action primary">
+                                <i class="fas fa-book-open"></i> View Write-ups
+                            </a>
+                        </div>
                     </div>
                 </article>
 
             </div>
         </section>
-
     </main>
 
     <script src="script.js"></script>
