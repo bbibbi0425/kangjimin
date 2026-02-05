@@ -587,13 +587,14 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .skill-box h4 {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    color: #2e3d86;
 }
 
 .tags {
@@ -680,18 +681,22 @@ ul {
 }
 
 .text-content h4 {
-    font-size: 1.35rem; /* 제목 크기 키움 */
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
-    font-weight: 700;
+    font-size: 1.25rem;       /* 기존 1.35rem -> 1.55rem로 확대 */
+    font-weight: 600;         /* 700 -> 800 (ExtraBold)로 더 굵게 */
+    color: #0f172a;           /* var(--text-main)보다 더 진한 블랙에 가까운 색 */
+    line-height: 1.35;        /* 줄 간격을 조금 좁혀서 제목이 덩어리져 보이게 함 */
+    margin-bottom: 0.5rem;    /* 아래 부제목과의 간격 */
+    word-break: keep-all;     /* [중요] 한글 단어 중간에서 줄바꿈 방지 */
+    letter-spacing: -0.02em;  /* 자간을 살짝 좁혀서 단단한 느낌 */
+    background-color: #e2e8f0;
 }
 
 .text-content .sub-title {
     font-size: 0.95rem;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 1rem;
-    display: block;
+    margin-bottom: 1.2rem;    /* 제목 그룹과 설명글 사이의 간격을 조금 더 벌림 */
+    opacity: 0.9;             /* 살짝 투명도를 줘서 제목을 더 돋보이게 함 */
 }
 
 .text-content .desc {
