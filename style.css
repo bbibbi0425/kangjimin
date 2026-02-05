@@ -648,16 +648,21 @@ ul {
     border-bottom: 1px solid var(--border);
 }
 
-.card-image img {
+/* --- [수정] 이미지와 동영상 모두 카드 크기에 딱 맞게 설정 --- */
+.card-image img,
+.card-image video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 비율 유지하며 꽉 채움 */
-    object-position: top center; /* 위쪽 중심으로 자르기 */
-    transition: 0.3s;
+    object-fit: cover;       /* 비율을 유지하면서 영역을 가득 채움 (남는 부분은 잘림) */
+    object-position: top center; /* 위쪽을 기준으로 정렬 */
+    transition: transform 0.3s;  /* 호버 효과 애니메이션 */
+    display: block;          /* 미세한 하단 여백 제거 */
 }
 
-.project-card:hover .card-image img {
-    transform: scale(1.05); /* 마우스 올리면 살짝 확대 */
+/* 마우스 올렸을 때 확대 효과 (이미지와 동영상 모두 적용) */
+.project-card:hover .card-image img,
+.project-card:hover .card-image video {
+    transform: scale(1.05);
 }
 
 /* 2. 하단 텍스트 및 버튼 영역 */
