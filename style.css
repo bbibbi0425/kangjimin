@@ -805,3 +805,9 @@ ul {
     }
 }
 
+/* 모바일 화면(너비 768px 이하)에서는 사이드바 하단 카피라이트 숨김 */
+@media (max-width: 768px) {
+    .footer-copy {
+        display: none;
+    }
+}
