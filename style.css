@@ -819,6 +819,152 @@ ul {
     .project-grid {
         grid-template-columns: 1fr; /* 한 줄에 하나씩 */
     }
+
+    /* --- [추가] 메인 타이틀(Hero) 섹션 크기 줄이기 --- */
+    .hero {
+        height: auto;        /* 화면을 꽉 채우지 않고 내용만큼만 높이 잡기 */
+        padding: 4rem 0;     /* 위아래 여백을 적당히 줘서 답답하지 않게 */
+        min-height: 50vh;    /* 너무 납작해지지 않게 최소 높이만 확보 */
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;  /* 제목 크기 확 줄임 (PC 3rem -> 모바일 1.75rem) */
+        line-height: 1.3;    /* 줄 간격도 좁힘 */
+        margin-bottom: 1rem; /* 설명글과의 간격 좁힘 */
+    }
+
+    .badge-pill {
+        margin-bottom: 1rem; /* 'Available for Hire' 뱃지와 제목 사이 간격 좁힘 */
+        padding: 4px 12px;   /* 뱃지 크기도 살짝 작게 */
+        font-size: 0.75rem;
+    }
+
+    .description {
+        font-size: 1.0rem;  /* 설명글 글자 크기 축소 */
+        margin-bottom: 2rem; /* 버튼과의 간격 축소 */
+        line-height: 1.5;
+        word-break: keep-all; /* 단어 중간 끊김 방지 */
+    }
+
+    /* 버튼 크기 아담하게 줄이기 */
+    .hero-btns .btn-primary,
+    .hero-btns .btn-secondary {
+        padding: 0.7rem 1.2rem; /* 버튼 뚱뚱한 여백 축소 */
+        font-size: 0.9rem;      /* 버튼 글자 크기 축소 */
+    }
+
+    /* --- [추가] 프로필 정보(이름, 이메일 등) 컴팩트하게 줄이기 --- */
+    .about-profile-container {
+        gap: 1.8rem;   /* 사진과 텍스트 사이 간격을 좁힘 (기존 2rem -> 1.5rem) */
+        margin-bottom: 1.5rem;
+    }
+
+    /* 사진 크기도 살짝 줄여서 밸런스 맞춤 */
+    .profile-photo-area img {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* 정보 한 줄(Row) 스타일 축소 */
+    .info-row {
+        margin-bottom: 0.5rem; /* 줄 간격을 절반으로 확 줄임 (1rem -> 0.5rem) */
+        font-size: 0.95rem;     /* 글자 크기를 작게 조정 */
+        justify-content: center; /* 가운데 정렬 유지 */
+    }
+
+    .info-row .icon {
+        font-size: 0.9rem; /* 아이콘 크기도 글자에 맞춰 축소 */
+        width: 20px;       /* 아이콘 차지 공간 줄임 */
+        margin-right: 8px; /* 아이콘과 글자 사이 간격 좁힘 */
+    }
+
+    .info-row .label {
+        width: auto;       /* 라벨 너비 자동 (불필요한 공백 제거) */
+        margin-right: 10px; /* 라벨과 내용 사이 간격 */
+        min-width: 50px;    /* 최소 너비 살짝 유지 */
+    }
+
+    /* 중간 구분선 여백 축소 */
+    .info-divider {
+        margin: 0.8rem 0;
+    }
+
+    /* --- [추가] About Me 카드 모바일 최적화 --- */
+    .about-card {
+        flex-direction: column; /* 아이콘과 글자를 위아래로 배치 */
+        padding: 2rem;          /* 패딩을 3rem -> 2rem으로 줄여서 공간 확보 */
+        gap: 1.5rem;            /* 아이콘과 글자 사이 간격 조정 */
+        align-items: flex-start; /* 왼쪽 정렬 유지 */
+    }
+
+    .about-icon {
+        width: 50px;       /* 아이콘 크기 살짝 줄임 */
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    .about-text h4 {
+        margin-top: 0;     /* 제목 위 불필요한 여백 제거 */
+        font-size: 1.1rem; /* 제목 폰트 크기 최적화 */
+    }
+    
+    .about-text p {
+        word-break: keep-all; /* 한글 단어가 중간에 끊기지 않도록 설정 */
+        font-size: 0.85rem;   /* 본문 폰트 크기 조정 */
+    }
+    
+    /* 1. 타임라인 전체 여백 줄이기 */
+    .timeline {
+        padding-left: 0; /* 불필요한 왼쪽 여백 제거 */
+    }
+
+    /* 2. 타임라인 수직선 위치를 왼쪽 끝으로 이동 */
+    .timeline::before {
+        left: 8px; /* 화면 왼쪽 끝에 가깝게 붙임 */
+    }
+
+    /* 3. 타임라인 점(Marker) 크기 축소 및 위치 조정 */
+    .timeline-marker {
+        left: 3px;       /* 선 위치에 맞춤 */
+        width: 12px;   /* 점 크기를 작게 줄임 (기존 16px -> 12px) */
+        height: 12px;
+        border-width: 2px; /* 테두리 두께도 얇게 */
+    }
+
+    /* 4. 내용 영역의 왼쪽 여백을 줄여서 글자가 들어갈 공간 확보 */
+    .timeline-item {
+        padding-left: 25px; /* 기존 45~50px에서 대폭 줄임 */
+        margin-bottom: 2rem; /* 아이템 간 간격도 조금 줄임 */
+    }
+
+    /* 5. 날짜와 뱃지 정렬 방식 개선 */
+    .meta-data {
+        flex-direction: row; /* 세로로 쌓지 않고 가로 유지 */
+        flex-wrap: wrap;     /* 공간 부족하면 자연스럽게 줄바꿈 */
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 0.3rem;
+    }
+
+    /* 6. 폰트 크기 미세 조정 (모바일 가독성 및 공간 확보) */
+    .timeline-content .date {
+        font-size: 0.85rem;
+    }
+    .timeline-content h5 {
+        font-size: 1rem; /* 제목 크기 살짝 줄임 */
+    }
+
+    .badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+    
+    /* 7. 설명글이 너무 길어지지 않게 조정 */
+    .timeline-content .desc {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        word-break: keep-all; /* 단어가 뚝 끊기지 않게 */
+    }
 }
 
 /* 모바일 화면(768px 이하) 대응 */
