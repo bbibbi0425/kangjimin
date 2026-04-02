@@ -1,28 +1,34 @@
-/* --- [1] 색상 변수 (Theme: Clean Blue) --- */
+/* --- [0] 커스텀 폰트 --- */
+@font-face {
+    font-family: 'OkMallang';
+    src: url('etc/fonts/Ok Mallang B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- [1] 색상 변수 (Theme: Wave Dark) --- */
 :root {
-    --bg-body: #f8fafc;
-    /* 아주 연한 하늘색 섞인 회색 (배경) */
-    --bg-sidebar: #ffffff;
-    /* 사이드바 화이트 */
+    --bg-body: #171717;
+    --bg-sidebar: #171717;
+    --bg-content: #F1F1F1;
     --bg-card: #ffffff;
-    /* 카드 화이트 */
 
-    --primary: #2e3d86;
-    /* 찐한 파랑 (제목, 강조) - 이미지의 진한 텍스트 */
-    --primary-light: #eff6ff;
-    /* 아주 연한 파랑 (배경 포인트) - 이미지의 아이콘 배경 */
-    --secondary: #64748b;
-    /* 회색 (본문 텍스트) */
+    --primary: #5AABF5;
+    --primary-dark: #4A8FD4;
+    --primary-light: #D1E8FC;
+    --primary-accent: #8FC9FF;
 
-    --text-main: #1e293b;
-    /* 진한 남색 (제목) */
-    --text-sub: #64748b;
-    /* 연한 회색 (설명) */
+    --grad-main: linear-gradient(135deg, #5AABF5 0%, #8FC9FF 100%);
+    --grad-soft: linear-gradient(135deg, #E5F0FF 0%, #ffffff 100%);
 
-    --border: #e2e8f0;
-    /* 연한 테두리 */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    /* 부드러운 그림자 */
+    --secondary: #595959;
+    --text-main: #171717;
+    --text-sub: #595959;
+
+    --border: #BDE0FE;
+    --shadow: 0 4px 20px rgba(143, 201, 255, 0.15);
+    --shadow-hover: 0 12px 40px rgba(90, 171, 245, 0.25);
+    --shadow-blue: 0 0 12px rgba(143, 201, 255, 0.6);
 }
 
 * {
@@ -33,12 +39,11 @@
 
 body {
     font-family: 'Pretendard', -apple-system, sans-serif;
-    background-color: --bg-body;
-    /* 살짝 톤다운된 배경 */
-    background: linear-gradient(to right, #ffffff);
+    background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
     display: flex;
+    min-height: 100vh;
 }
 
 a {
@@ -51,69 +56,70 @@ ul {
     list-style: none;
 }
 
-/* --- [2] 사이드바 (White & Clean) --- */
+/* --- [2] 사이드바 --- */
 .sidebar {
-    width: 280px;
+    width: 260px;
     height: 100vh;
-    background-color: var(--bg-sidebar);
-    border-right: 1px solid var(--border);
+    background: #171717;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
     position: fixed;
     top: 0;
     left: 0;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
 }
 
-/* --- About Me 섹션 전용 배경 스타일 --- */
-#about {
-    background-color: #eff6ff;
-    padding: 2.5rem;
-    border-radius: 5px;
+/* --- About Me 박스 카드 --- */
+.about-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
     border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .profile-img img {
     width: 120px;
     height: 120px;
     border-radius: 40px;
-    /* 약간 둥근 사각형 느낌 */
     object-fit: cover;
     margin-bottom: 1.5rem;
     background-color: var(--primary-light);
     padding: 5px;
 }
 
-/* --- [추가] About 프로필 섹션 스타일 --- */
+/* --- About 프로필 섹션 스타일 --- */
 .about-profile-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    /* 수직 중앙 정렬 */
-    gap: 4rem;
-    /* 사진과 글자 사이 간격 */
-    margin-bottom: 2rem;
-    padding: 1rem 0;
+    gap: 1.5rem;
+    text-align: center;
 }
 
-/* 왼쪽 원형 이미지 */
 .profile-photo-area img {
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    /* 완벽한 원형 */
     object-fit: cover;
     box-shadow: var(--shadow);
-    /* 부드러운 그림자 */
-    border: 5px solid #fff;
-    /* 흰색 테두리로 깔끔하게 */
+    border: 4px solid #fff;
 }
 
-/* 오른쪽 정보 리스트 */
 .profile-info-area {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .info-row {
@@ -126,8 +132,7 @@ ul {
 
 .info-row .icon {
     width: 30px;
-    color: var(--text-sub);
-    /* 아이콘은 회색톤 */
+    color: var(--primary-accent);
     font-size: 1.1rem;
     display: flex;
     justify-content: center;
@@ -136,9 +141,7 @@ ul {
 
 .info-row .label {
     width: 80px;
-    /* 라벨 너비 고정 (정렬 맞춤) */
     font-weight: 600;
-    /* 조금 굵게 */
     color: var(--text-main);
 }
 
@@ -147,7 +150,6 @@ ul {
     font-weight: 400;
 }
 
-/* 링크 스타일 */
 .info-row .value.link {
     color: var(--primary);
     text-decoration: underline;
@@ -156,10 +158,10 @@ ul {
 }
 
 .info-row .value.link:hover {
-    color: #1d4ed8;
+    color: var(--primary-accent);
 }
 
-/* --- [재수정] 이력(Timeline) 컴팩트 스타일 --- */
+/* --- 이력(Timeline) 컴팩트 스타일 --- */
 .resume-section {
     margin-top: 4rem;
     padding-top: 3rem;
@@ -177,63 +179,56 @@ ul {
     margin-right: 8px;
 }
 
-/* 타임라인 전체 컨테이너 */
 .timeline {
     position: relative;
     padding-left: 10px;
-    /* 왼쪽에 살짝 여백 */
 }
 
-/* 타임라인 왼쪽 수직선 (전체를 관통하는 선) */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 19px;
-    /* 점의 중심과 일치시킴 */
     width: 2px;
-    background-color: #e2e8f0;
+    background-color: var(--primary-light); 
     border-radius: 2px;
 }
 
-/* 개별 아이템 */
 .timeline-item {
     position: relative;
     margin-bottom: 3rem;
     padding-left: 50px;
-    /* 선과 내용 사이 간격 확보 */
 }
 
 .timeline-item:last-child {
     margin-bottom: 0;
 }
 
-/* 타임라인 점 (Marker) */
 .timeline-marker {
     position: absolute;
-    top: 0;
+    top: 4px;
     left: 2px;
-    /* 선 위에 오도록 위치 조정 */
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border: 4px solid var(--primary);
+    width: 14px;
+    height: 14px;
+    background: var(--grad-main);
     border-radius: 50%;
     z-index: 1;
-    /* 선보다 위에 오게 */
-    box-shadow: 0 0 0 4px #fff;
-    /* 점 주변에 흰색 테두리를 줘서 선을 가림 */
+    box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(112, 150, 209, 0.4);
+    transition: 0.3s;
 }
 
-/* 내용 영역 */
+.timeline-item:hover .timeline-marker {
+    box-shadow: 0 0 0 4px #fff, 0 0 0 7px rgba(143, 201, 255, 0.35);
+    transform: scale(1.15);
+}
+
 .timeline-content {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
 }
 
-/* 날짜 + 뱃지 한 줄 정렬 */
 .meta-data {
     display: flex;
     align-items: center;
@@ -241,18 +236,14 @@ ul {
     margin-bottom: 0.2rem;
 }
 
-/* 날짜 스타일 (작고 깔끔하게) */
 .timeline-content .date {
     font-family: 'Pretendard', sans-serif;
-    /* 숫자 폰트 */
     font-weight: 600;
     color: var(--secondary);
-    /* 회색 */
     font-size: 0.95rem;
     min-width: fit-content;
 }
 
-/* 제목 스타일 */
 .timeline-content h5 {
     font-size: 1.15rem;
     font-weight: 600;
@@ -261,16 +252,13 @@ ul {
     line-height: 1.3;
 }
 
-/* 역할/수상명 스타일 */
 .timeline-content .role {
     font-size: 1.0rem;
     font-weight: 500;
     color: var(--primary);
-    /* 파란색 포인트 */
     margin: 0;
 }
 
-/* 설명글 스타일 */
 .timeline-content .desc {
     font-size: 0.9rem;
     color: var(--text-sub);
@@ -278,7 +266,6 @@ ul {
     line-height: 1.5;
 }
 
-/* 뱃지 공통 */
 .badge {
     padding: 2px 8px;
     border-radius: 6px;
@@ -288,23 +275,22 @@ ul {
     letter-spacing: 0.5px;
 }
 
-/* 뱃지 색상 */
 .badge.award {
-    background-color: #fff1f2;
-    color: #e11d48;
-    border: 1px solid #fecdd3;
+    background-color: #FFF5F5;
+    color: #E53E3E;
+    border: 1px solid #FED7D7;
 }
 
 .badge.paper {
-    background-color: #f0fdf4;
-    color: #16a34a;
-    border: 1px solid #bbf7d0;
+    background-color: #F0FFF4;
+    color: #38A169;
+    border: 1px solid #C6F6D5;
 }
 
 .badge.activity {
-    background-color: #eff6ff;
-    color: #2563eb;
-    border: 1px solid #bfdbfe;
+    background-color: #FFFFFF;
+    color: var(--primary);
+    border: 1px solid var(--border);
 }
 
 /* 모바일 반응형 */
@@ -312,20 +298,16 @@ ul {
     .timeline::before {
         left: 19px;
     }
-
     .timeline-item {
         padding-left: 45px;
     }
-
     .meta-data {
         flex-direction: column;
-        /* 모바일에서 날짜/뱃지 줄바꿈 */
         align-items: flex-start;
         gap: 5px;
     }
 }
 
-/* 구분선 */
 .info-divider {
     height: 1px;
     background-color: var(--border);
@@ -333,29 +315,23 @@ ul {
     width: 100%;
 }
 
-/* 모바일 반응형 (화면 좁을 때 위아래 배치) */
 @media (max-width: 900px) {
     .about-profile-container {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
-
     .profile-photo-area img {
         width: 200px;
         height: 200px;
     }
-
     .info-row {
         justify-content: center;
-        /* 가운데 정렬 */
     }
-
     .info-row .label {
         width: auto;
         margin-right: 10px;
     }
-
     .info-row .icon {
         margin-right: 10px;
     }
@@ -364,12 +340,12 @@ ul {
 .name {
     font-size: 1.6rem;
     font-weight: 800;
-    color: var(--text-main);
+    color: #ffffff;
     margin-bottom: 0.2rem;
 }
 
 .role {
-    color: var(--primary);
+    color: var(--primary-accent);
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 2rem;
@@ -385,108 +361,316 @@ ul {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: var(--primary-light);
-    color: var(--primary);
+    background-color: transparent;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-links a:hover {
-    background-color: var(--primary);
+    background: var(--primary);
     color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-blue);
 }
 
 .nav-menu ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 4px;
 }
 
 .nav-menu a {
     display: flex;
     align-items: center;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    color: var(--text-sub);
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.55);
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.2s;
 }
 
 .nav-menu i {
-    margin-right: 12px;
-    width: 20px;
+    margin-right: 10px;
+    width: 18px;
     text-align: center;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .nav-menu a.active {
-    background-color: var(--primary-light);
-    color: var(--primary);
+    background: transparent;
+    color: #fff;
     font-weight: 700;
+    border: 1px solid rgba(143, 201, 255, 0.6);
+    box-shadow: 0 0 10px rgba(143, 201, 255, 0.3);
 }
 
 .footer-copy {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* --- [3] 메인 콘텐츠 --- */
 .main-content {
-    margin-left: 280px;
-    width: calc(100% - 280px);
-    padding: 5rem 8%;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    height: 100vh;
+    overflow: hidden;
+    background: #171717;
+    padding: 1.2rem;
+}
+
+/* Wave to WWW result-container 스타일 — 내부 라운드 카드 */
+.main-content-inner {
+    background: #ffffff;
+    border-radius: 24px;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+    scrollbar-width: none;
+}
+
+.main-content-inner::-webkit-scrollbar {
+    display: none;
+}
+
+/* 블롭 배경 애니메이션 */
+.main-content-inner .bg-blob {
+    position: absolute;
+    width: 600px;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(rgba(209, 232, 252, 0.4), rgba(143, 201, 255, 0.25));
+    border-radius: 30% 70% 70% 30% / 30% 40% 70% 70%;
+    filter: blur(180px);
+    z-index: 0;
+    pointer-events: none;
+}
+.main-content-inner .bg-blob-1 { top: -100px; right: -150px; animation: blobFloat1 12s ease-in-out infinite, blobMorph 12s linear infinite; }
+.main-content-inner .bg-blob-2 { bottom: -100px; left: -100px; animation: blobFloat2 14s ease-in-out infinite, blobMorph 14s linear infinite reverse; }
+
+@keyframes blobMorph {
+    0%,100% { border-radius: 30% 70% 70% 30% / 30% 40% 70% 70%; }
+    25%      { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50%      { border-radius: 40% 60% 60% 40% / 50% 60% 40% 50%; }
+    75%      { border-radius: 70% 30% 40% 60% / 30% 70% 50% 50%; }
+}
+@keyframes blobFloat1 {
+    0%,100% { transform: translate(0,0); }
+    50%      { transform: translate(-30px, 30px); }
+}
+@keyframes blobFloat2 {
+    0%,100% { transform: translate(0,0); }
+    50%      { transform: translate(30px, -30px); }
 }
 
 .section {
-    margin-bottom: 8rem;
-    scroll-margin-top: 5rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: calc(100vh - 2.4rem);
+    padding: 4rem 7%;
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
 }
 
-/* 섹션 공통 */
+/* 섹션 배경색 교차 — 슬라이드 구분감 */
+#home    { background: #ffffff; }
+#about   { background: #EBF5FF; }
+#skills  { background: #ffffff; display: flex; flex-direction: column; justify-content: center; }
+#projects{ background: #EBF5FF; }
+
 .section-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
     color: var(--text-main);
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-bottom: 0.6rem;
 }
 
 .section-title::before {
+    display: none;
+}
+
+.section-title::after {
     content: '';
-    display: block;
-    width: 8px;
-    height: 30px;
-    background-color: var(--primary);
-    margin-right: 15px;
-    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 4px;
+    background: var(--grad-main);
+    border-radius: 99px;
 }
 
 /* Hero 섹션 */
 .hero {
-    height: 70vh;
+    min-height: calc(100vh - 2.4rem);
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 0;
+    z-index: 10;
+}
+
+/* =======================================================
+   인라인 3D 버블 텍스트 - China(하늘색) 표면 + Royal(네이비) 그림자
+   ======================================================= */
+.bubble-text {
+    font-family: 'OkMallang', sans-serif;
+    font-size: 2.2em;
+    letter-spacing: -2.5px; 
+    display: inline-flex;
+    vertical-align: bottom;
+    padding-top: 15px; 
+    
+    padding-right: 13px;
+}
+
+.bubble-space {
+    width: 15px;
+}
+
+.bubble-suffix {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    font-size: 0.45em;
+    font-weight: 600;
+    color: var(--text-main);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+    animation: none;
+    align-self: flex-end;
+    padding-bottom: 0.3em;
+    padding-left: 0.1em;
+}
+
+.bubble-text span[data-char] {
+    display: inline-block;
+    color: #BDE0FE;
+    position: relative;
+    font-weight: 700;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
+    paint-order: stroke fill;
+
+    text-shadow:
+        0 1px 0 #A2D2FF,
+        0 3px 0 #8FC9FF,
+        0 5px 0 #5AABF5,
+        0 7px 0 #4A8FD4,
+        0 9px 0 #3A7EC0,
+        0 16px 15px rgba(90, 171, 245, 0.4);
+    animation: jelly-bounce 2s ease-in-out infinite alternate;
+    transform-origin: bottom; 
+    
+    /* 글자 자체의 투명 영역을 넓혀 그림자가 퍼질 공간을 확보합니다 (짤림 완벽 해결) */
+    padding: 0 15px;     
+    margin: 0 -15px;     
+}
+
+/* 광택 하이라이트 (Glossy sheen) 효과 */
+.bubble-text span[data-char]::after {
+    content: attr(data-char);
+    position: absolute;
+    top: 0; left: 15px; 
+    color: transparent;
+    -webkit-text-stroke: 0; 
+    background: radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.3) 30%, transparent 55%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 젤리처럼 엇갈리며 움직이는 애니메이션 딜레이 */
+.bubble-text span[data-char]:nth-child(2n) { animation-delay: 0.1s; }
+.bubble-text span[data-char]:nth-child(3n) { animation-delay: 0.2s; }
+.bubble-text span[data-char]:nth-child(4n) { animation-delay: 0.3s; }
+.bubble-text span[data-char]:nth-child(5n) { animation-delay: 0.4s; }
+
+/* 누를 때 더 찌그러지는 젤리 느낌 */
+@keyframes jelly-bounce {
+    0%, 100% { 
+        transform: translateY(0) scale(1, 1); 
+    }
+    50% { 
+        transform: translateY(-8px) scale(0.96, 1.04); 
+    }
+}
+/* ======================================================= */
+
+.hero::before,
+.hero::after {
+    display: none;
 }
 
 .badge-pill {
-    background-color: var(--primary-light);
-    color: var(--primary);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 0.85rem;
+    background: var(--grad-main);
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 99px;
+    font-size: 0.8rem;
     font-weight: 700;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 14px rgba(143, 201, 255, 0.35);
+    
+    margin-left: 15px;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
     color: var(--text-main);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin-left: 15px;
 }
 
 .highlight {
-    color: var(--primary);
+    background: var(--grad-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mobile-break {
+    display: none;
+}
+
+.highlight-navy {
+    background: linear-gradient(135deg, #2185b7 0%, #2185b7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.desc-highlight {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .description {
@@ -494,78 +678,101 @@ ul {
     color: var(--text-sub);
     margin-bottom: 3rem;
     max-width: 600px;
+
+    margin-left: 15px;
 }
 
 .hero-btns {
     display: flex;
     gap: 1rem;
+
+    margin-left: 15px
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    background: var(--grad-main);
     color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    padding: 0.9rem 2.2rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 18px rgba(143, 201, 255, 0.35);
+    transition: 0.25s;
 }
 
 .btn-secondary {
     background-color: #fff;
-    color: var(--text-main);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    border: 1px solid var(--border);
+    color: var(--primary);
+    padding: 0.9rem 2.2rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 2px solid var(--border);
+    transition: 0.25s;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(143, 201, 255, 0.45);
+    filter: brightness(1.1);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-light);
-    color: var(--primary);
+    background: var(--primary-light);
+    border-color: var(--primary);
+    transform: translateY(-3px);
 }
 
 /* About 카드 */
 .about-card {
-    background: var(--bg-card);
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: flex-start;
     border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.about-card::before {
+    display: none;
+}
+
+.about-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 
 .about-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-light);
-    color: var(--primary);
+    width: 56px;
+    height: 56px;
+    background: var(--grad-main);
+    color: #fff;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     flex-shrink: 0;
+    box-shadow: 0 6px 16px rgba(143, 201, 255, 0.35);
 }
 
 .about-text h4 {
     font-size: 1.2rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-    color: var(--primary);
+    color: var(--text-main);
 }
 
 .about-text p {
     color: var(--text-sub);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* Skills 박스 (이미지 느낌) */
+/* Skills 박스 */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -575,34 +782,56 @@ ul {
 .skill-box {
     background: #fff;
     padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: var(--shadow);
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--grad-main);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
 }
 
 .skill-box:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(143, 201, 255, 0.2);
+}
+
+.skill-box:hover::after {
+    transform: scaleX(1);
 }
 
 .skill-box .icon-box {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-light);
-    color: var(--primary);
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    background: var(--grad-main);
+    color: #fff;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 6px 16px rgba(143, 201, 255, 0.35);
 }
 
 .skill-box h4 {
     margin-bottom: 1rem;
-    font-size: 1.3rem;
-    color: #2e3d86;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
 }
 
 .tags {
@@ -612,107 +841,106 @@ ul {
 }
 
 .tags span {
-    background: #f1f5f9;
-    color: var(--text-sub);
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 5px 14px;
+    border-radius: 99px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    transition: 0.2s;
+    letter-spacing: 0.01em;
 }
 
-/* --- Projects & Write-ups 카드형 디자인 (이미지 상단 배치) --- */
+.tags span:hover {
+    background: var(--grad-main);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 10px rgba(143, 201, 255, 0.25);
+    transform: translateY(-1px);
+}
 
+/* Projects & Write-ups */
 .project-grid {
     display: grid;
     gap: 2rem;
-    /* 카드가 너무 좁아지지 않게 최소 너비 설정 */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .project-card {
     background: #fff;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: var(--shadow);
-    /* 핵심: 요소를 세로(Column)로 배치 */
     display: flex;
-    flex-direction: column; 
-    overflow: hidden; /* 둥근 모서리 밖으로 이미지가 튀어나가지 않게 */
-    transition: 0.3s;
-    padding: 0; /* 카드 자체 패딩 제거 (이미지를 꽉 채우기 위해) */
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-light);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(143, 201, 255, 0.2);
 }
 
-/* 1. 상단 이미지 영역 (꽉 차게) */
 .card-image {
     width: 100%;
-    /* 가로형 GIF가 잘 보이도록 높이를 넉넉하게 잡음 */
-    height: 240px; 
-    background-color: #f1f5f9;
+    height: 240px;
+    background-color: var(--bg-card);
     border-bottom: 1px solid var(--border);
 }
 
-/* --- [수정] 이미지와 동영상 모두 카드 크기에 딱 맞게 설정 --- */
 .card-image img,
 .card-image video {
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* 비율을 유지하면서 영역을 가득 채움 (남는 부분은 잘림) */
-    object-position: top center; /* 위쪽을 기준으로 정렬 */
-    transition: transform 0.3s;  /* 호버 효과 애니메이션 */
-    display: block;          /* 미세한 하단 여백 제거 */
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s;
+    display: block;
 }
 
-/* 마우스 올렸을 때 확대 효과 (이미지와 동영상 모두 적용) */
 .project-card:hover .card-image img,
 .project-card:hover .card-image video {
     transform: scale(1.05);
 }
 
-/* 2. 하단 텍스트 및 버튼 영역 */
 .card-content {
-    /* 패딩을 여기서 줍니다 (이미지와 글자 사이 여백) */
     padding: 1.5rem; 
     display: flex;
     flex-direction: column;
-    flex: 1; /* 높이 채우기 */
+    flex: 1;
     gap: 0.5rem;
 }
 
 .text-content {
-    margin-bottom: 1.5rem; /* 버튼과 간격 벌리기 */
+    margin-bottom: 1.5rem;
 }
 
 .text-content h4 {
     font-size: 1.25rem;
-    font-weight: 800; /* 기존 600에서 조금 더 굵게 추천 */
-    color: #0f172a;
+    font-weight: 800;
+    color: var(--text-main);
     line-height: 1.35;
     word-break: keep-all;
     letter-spacing: -0.02em;
-    background-color: #eff6ff;
-
-    /* --- [수정] 박스를 가득 채우기 위한 코드 --- */
-    margin-left: -1.5rem;   /* 왼쪽 패딩만큼 밖으로 당김 */
-    margin-right: -1.5rem;  /* 오른쪽 패딩만큼 밖으로 당김 */
-    margin-top: -1.5rem;    /* 위쪽 패딩만큼 당겨서 이미지 바로 아래에 붙임 */
-    
-    padding: 0.5rem 1.5rem; /* 글자가 너무 붙지 않도록 안쪽 여백 추가 */
-    margin-bottom: 1.2rem;  /* 제목 아래 내용과의 간격 조정 */
-    border-bottom: 1px solid var(--border); /* (선택사항) 아래쪽에 얇은 선 추가 */
+    background-color: var(--bg-card);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: -1.5rem;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
 }
 
 .text-content .sub-title {
     font-size: 0.95rem;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 1.2rem;    /* 제목 그룹과 설명글 사이의 간격을 조금 더 벌림 */
-    opacity: 0.9;             /* 살짝 투명도를 줘서 제목을 더 돋보이게 함 */
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
 }
 
 .text-content .desc {
@@ -722,15 +950,14 @@ ul {
     margin-bottom: 0;
 }
 
-/* 3. 하단 버튼 그룹 */
 .card-actions {
     display: flex;
     gap: 10px;
-    margin-top: auto; /* 내용을 위로 밀고 버튼은 바닥에 고정 */
+    margin-top: auto;
 }
 
 .btn-action {
-    flex: 1; /* 버튼 너비 1:1 비율 */
+    flex: 1;
     padding: 0.8rem;
     border-radius: 8px;
     font-size: 0.95rem;
@@ -742,34 +969,35 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: 1px solid transparent; /* 테두리 공간 확보 */
+    border: 1px solid transparent;
 }
 
-/* 메인 버튼 (Code/Paper) */
 .btn-action.primary {
-    background-color: var(--primary-light);
-    color: var(--primary);
+    background: var(--grad-main);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 12px rgba(143, 201, 255, 0.35);
 }
 
 .btn-action.primary:hover {
-    background-color: var(--primary);
-    color: #fff;
+    filter: brightness(1.1);
+    box-shadow: 0 6px 18px rgba(143, 201, 255, 0.45);
+    transform: translateY(-2px);
 }
 
-/* 보조 버튼 (Report/PPT) */
 .btn-action.secondary {
     background-color: #fff;
-    border-color: var(--border);
-    color: var(--text-sub);
+    border-color: rgba(143, 201, 255, 0.25);
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .btn-action.secondary:hover {
-    background-color: #f8fafc;
-    border-color: var(--text-main);
-    color: var(--text-main);
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
-/* 버튼 3개일 때 스타일 조정 */
 .card-actions.three-buttons {
     gap: 6px;
 }
@@ -778,11 +1006,10 @@ ul {
     font-size: 0.85rem;
 }
 
-/* --- 프로젝트 상세 스펙 (Tech & Role) 스타일 --- */
 .project-specs {
     margin-top: 1.2rem;
     padding-top: 1rem;
-    border-top: 1px dashed var(--border); /* 점선으로 구분 */
+    border-top: 1px dashed var(--border);
     font-size: 0.9rem;
 }
 
@@ -798,9 +1025,10 @@ ul {
 }
 
 .spec-label {
+    font-family: 'Fira Code', 'Courier New', monospace;
     font-weight: 800;
-    color: var(--primary); /* 파란색 강조 */
-    min-width: 55px; /* 라벨 너비 고정 */
+    color: var(--primary);
+    min-width: 55px;
     flex-shrink: 0;
 }
 
@@ -808,177 +1036,208 @@ ul {
     color: var(--text-main);
     font-weight: 500;
     line-height: 1.5;
-    word-break: keep-all; /* 단어 중간에 줄바꿈 방지 */
+    word-break: keep-all;
 }
 
 /* 모바일 화면 대응 */
 @media (max-width: 600px) {
     .card-image {
-        height: 200px; /* 모바일은 이미지를 조금 작게 */
+        height: 200px;
     }
     .project-grid {
-        grid-template-columns: 1fr; /* 한 줄에 하나씩 */
+        grid-template-columns: 1fr;
+    }
+    /* 모바일 줄바꿈 */
+    .mobile-break {
+        display: block;
     }
 
-    /* --- [추가] 메인 타이틀(Hero) 섹션 크기 줄이기 --- */
+    /* KANG JIMIN 두 줄로 (크기 유지) */
+    .bubble-text {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .bubble-space {
+        flex-basis: 100%;
+        height: 0;
+        width: 0;
+    }
+
     .hero {
-        height: auto;        /* 화면을 꽉 채우지 않고 내용만큼만 높이 잡기 */
-        padding: 4rem 0;     /* 위아래 여백을 적당히 줘서 답답하지 않게 */
-        min-height: 50vh;    /* 너무 납작해지지 않게 최소 높이만 확보 */
+        height: auto;
+        padding: 3rem 0;
+        min-height: 50vh;
     }
-
     .hero h2 {
-        font-size: 2.2rem;  /* 제목 크기 확 줄임 (PC 3rem -> 모바일 1.75rem) */
-        line-height: 1.3;    /* 줄 간격도 좁힘 */
-        margin-bottom: 1rem; /* 설명글과의 간격 좁힘 */
+        font-size: 1.6rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        word-break: keep-all;
     }
-
     .badge-pill {
-        margin-bottom: 1rem; /* 'Available for Hire' 뱃지와 제목 사이 간격 좁힘 */
-        padding: 4px 12px;   /* 뱃지 크기도 살짝 작게 */
+        margin-bottom: 1rem;
+        padding: 4px 12px;
         font-size: 0.75rem;
     }
-
     .description {
-        font-size: 1.0rem;  /* 설명글 글자 크기 축소 */
-        margin-bottom: 2rem; /* 버튼과의 간격 축소 */
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
         line-height: 1.5;
-        word-break: keep-all; /* 단어 중간 끊김 방지 */
+        word-break: keep-all;
+    }
+    .desc-highlight {
+        font-size: 1.1rem;
     }
 
-    /* 버튼 크기 아담하게 줄이기 */
-    .hero-btns .btn-primary,
-    .hero-btns .btn-secondary {
-        padding: 0.7rem 1.2rem; /* 버튼 뚱뚱한 여백 축소 */
-        font-size: 0.9rem;      /* 버튼 글자 크기 축소 */
-    }
-
-    /* --- [추가] 프로필 정보(이름, 이메일 등) 컴팩트하게 줄이기 --- */
-    .about-profile-container {
-        gap: 1.8rem;   /* 사진과 텍스트 사이 간격을 좁힘 (기존 2rem -> 1.5rem) */
+    /* 섹션 타이틀 크기 */
+    .section-title {
+        font-size: 1.7rem;
         margin-bottom: 1.5rem;
     }
-
-    /* 사진 크기도 살짝 줄여서 밸런스 맞춤 */
+    .hero-btns .btn-primary,
+    .hero-btns .btn-secondary {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .about-box {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    .about-profile-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
     .profile-photo-area img {
         width: 180px;
         height: 180px;
     }
-
-    /* 정보 한 줄(Row) 스타일 축소 */
     .info-row {
-        margin-bottom: 0.5rem; /* 줄 간격을 절반으로 확 줄임 (1rem -> 0.5rem) */
-        font-size: 0.85rem;     /* 글자 크기를 작게 조정 */
-        justify-content: center; /* 가운데 정렬 유지 */
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        justify-content: center;
     }
-
     .info-row .icon {
-        font-size: 0.9rem; /* 아이콘 크기도 글자에 맞춰 축소 */
-        width: 20px;       /* 아이콘 차지 공간 줄임 */
-        margin-right: 8px; /* 아이콘과 글자 사이 간격 좁힘 */
+        font-size: 0.9rem;
+        width: 20px;
+        margin-right: 8px;
     }
-
     .info-row .label {
-        width: auto;       /* 라벨 너비 자동 (불필요한 공백 제거) */
-        margin-right: 10px; /* 라벨과 내용 사이 간격 */
-        min-width: 50px;    /* 최소 너비 살짝 유지 */
+        width: auto;
+        margin-right: 10px;
+        min-width: 50px;
     }
-
-    /* 중간 구분선 여백 축소 */
     .info-divider {
         margin: 0.8rem 0;
     }
-
-    /* --- [추가] About Me 카드 모바일 최적화 --- */
     .about-card {
-        flex-direction: column; /* 아이콘과 글자를 위아래로 배치 */
-        padding: 1.5rem;          /* 패딩을 3rem -> 2rem으로 줄여서 공간 확보 */
+        flex-direction: column;
+        padding: 1.5rem;
         margin: -1rem;
-        gap: 1rem;            /* 아이콘과 글자 사이 간격 조정 */
-        align-items: flex-start; /* 왼쪽 정렬 유지 */
+        gap: 1rem;
+        align-items: flex-start;
     }
-
     .about-icon {
-        width: 50px;       /* 아이콘 크기 살짝 줄임 */
+        width: 50px;
         height: 50px;
         font-size: 1.4rem;
     }
-
     .about-text h4 {
-        margin-top: 0;     /* 제목 위 불필요한 여백 제거 */
-        font-size: 1.1rem; /* 제목 폰트 크기 최적화 */
+        margin-top: 0;
+        font-size: 1.1rem;
     }
-    
     .about-text p {
-        word-break: keep-all; /* 한글 단어가 중간에 끊기지 않도록 설정 */
-        font-size: 0.85rem;   /* 본문 폰트 크기 조정 */
+        word-break: keep-all;
+        font-size: 0.85rem;
     }
-    
-    /* 1. 타임라인 전체 여백 줄이기 */
     .timeline {
-        padding-left: 0; /* 불필요한 왼쪽 여백 제거 */
+        padding-left: 0;
     }
-
-    /* 2. 타임라인 수직선 위치를 왼쪽 끝으로 이동 */
     .timeline::before {
-        left: 8px; /* 화면 왼쪽 끝에 가깝게 붙임 */
+        left: 8px;
     }
-
-    /* 3. 타임라인 점(Marker) 크기 축소 및 위치 조정 */
     .timeline-marker {
-        left: 3px;       /* 선 위치에 맞춤 */
-        width: 12px;   /* 점 크기를 작게 줄임 (기존 16px -> 12px) */
+        left: 3px;
+        width: 12px;
         height: 12px;
-        border-width: 2px; /* 테두리 두께도 얇게 */
+        border-width: 2px;
     }
-
-    /* 4. 내용 영역의 왼쪽 여백을 줄여서 글자가 들어갈 공간 확보 */
     .timeline-item {
-        padding-left: 25px; /* 기존 45~50px에서 대폭 줄임 */
-        margin-bottom: 2rem; /* 아이템 간 간격도 조금 줄임 */
+        padding-left: 25px;
+        margin-bottom: 2rem;
     }
-
-    /* 5. 날짜와 뱃지 정렬 방식 개선 */
     .meta-data {
-        flex-direction: row; /* 세로로 쌓지 않고 가로 유지 */
-        flex-wrap: wrap;     /* 공간 부족하면 자연스럽게 줄바꿈 */
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         gap: 8px;
         margin-bottom: 0.3rem;
     }
-
-    /* 6. 폰트 크기 미세 조정 (모바일 가독성 및 공간 확보) */
     .timeline-content .date {
         font-size: 0.85rem;
     }
     .timeline-content h5 {
-        font-size: 1rem; /* 제목 크기 살짝 줄임 */
+        font-size: 1rem;
     }
-
     .badge {
         font-size: 0.6rem;
         padding: 2px 6px;
     }
-    
-    /* 7. 설명글이 너무 길어지지 않게 조정 */
     .timeline-content .desc {
         font-size: 0.85rem;
         line-height: 1.4;
-        word-break: keep-all; /* 단어가 뚝 끊기지 않게 */
+        word-break: keep-all;
     }
 }
 
-/* 모바일 화면(768px 이하) 대응 */
 @media (max-width: 768px) {
-    /* 1. 사이드바 전체 숨기기 */
     .sidebar {
         display: none;
     }
-
-    /* 2. 메인 콘텐츠 영역 확장 (사이드바 자리 채우기) */
     .main-content {
-        margin-left: 0;      /* 왼쪽 여백 제거 */
-        width: 100%;         /* 너비 100%로 확장 */
-        padding: 3rem 1.5rem; /* 모바일에서 보기 좋게 안쪽 여백 조정 */
+        margin-left: 0;
+        width: 100%;
+        padding: 0;
+        height: 100vh;
     }
+    .main-content-inner {
+        border-radius: 0;
+    }
+    .section {
+        padding: 3rem 1.5rem;
+    }
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* =======================================================
+   [4] 스크롤 및 등장 애니메이션
+   ======================================================= */
+
+/* 1. Hero 섹션 초기 로드 애니메이션 (페이지 접속 시 순차적 등장) */
+.hero-content .badge-pill { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.1s; opacity: 0; transform: translateY(20px); }
+.hero-content h2 { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s; opacity: 0; transform: translateY(20px); }
+.hero-content .description { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s; opacity: 0; transform: translateY(20px); }
+.hero-content .hero-btns { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s; opacity: 0; transform: translateY(20px); }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. 스크롤 시 아래에서 위로 나타날 요소들 (JS 연동) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* JS에서 요소가 화면에 보일 때 .active 클래스를 붙여줍니다 */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
