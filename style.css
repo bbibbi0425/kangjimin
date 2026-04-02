@@ -37,6 +37,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Pretendard', -apple-system, sans-serif;
     background-color: var(--bg-body);
@@ -433,6 +437,7 @@ ul {
     border-radius: 24px;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     position: relative;
@@ -1200,9 +1205,11 @@ ul {
         width: 100%;
         padding: 0;
         height: 100vh;
+        background: #ffffff;
     }
     .main-content-inner {
         border-radius: 0;
+        width: 100%;
     }
     .section {
         padding: 3rem 1.5rem;
