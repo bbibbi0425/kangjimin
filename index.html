@@ -320,6 +320,41 @@
 
                 <article class="project-card">
                     <div class="card-image">
+                        <img src="./etc/images/cert.png" alt="woowa-beavers">
+                    </div>
+                    <div class="card-content">
+                        <div class="text-content">
+                            <h4>AWS 쇼핑몰 서비스 인프라 구축 및 침해사고 시나리오 대응</h4>
+                            <p class="sub-title">Baby Beavers 클라우드 보안 1기 CERT</p>
+                            <p class="desc">
+                                AWS 실전 침해사고 분석부터 보안 인프라 설계, CTI 자동화까지 직접 구축하고 운영합니다. TTP 기반 침해사고 케이스북 작성, AWS MSA 쇼핑몰 보안 인프라 구성, SIEM·EDR을 활용한 위협 인텔리전스 수집·분류 자동화 파이프라인을 구현했습니다.
+                            </p>
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">AWS, Terraform, Wazuh, Docker, FastAPI, n8n, Velociraptor, Cloudflare Tunnel, GitHub Actions</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · MITRE ATT&CK TTP 기반 AWS 침해사고 타임라인 분석<br>
+                                        · AWS MSA 쇼핑몰 보안 인프라 설계 및 구축<br>
+                                        · n8n 기반 CTI 수집·분류 자동화 파이프라인 개발
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/woowa-beavers" target="_blank"
+                                class="btn-action primary">
+                                <i class="fab fa-github"></i> Organization
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-image">
                         <video autoplay loop muted playsinline>
                             <source src="./etc/images/web_safe.mp4" type="video/mp4">
                             브라우저가 동영상을 지원하지 않습니다.
@@ -365,42 +400,6 @@
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="./etc/images/extract_llm.gif" alt="extract_llm 실행 화면">
-                    </div>
-                    <div class="card-content">
-                        <div class="text-content">
-                            <h4>LLM 포렌식 아티팩트 추출용 자동화 스크립트</h4>
-                            <p class="sub-title">Automated Script for LLM Forensic Artifact Extraction</p>
-                            <p class="desc">
-                                E01 디스크 이미지에서 LLM 애플리케이션(ChatGPT, Claude, LM Studio, Jan, 미정의 LLM 등)의 실행 흔적 / 사용자 정보 /
-                                프롬프트 / 파일 업로드 / 네트워크 아티팩트를 자동 수집·분류하는 포렌식 도구입니다.
-                            <div class="project-specs">
-                                <div class="spec-row">
-                                    <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">Python, dfVFS, pytsk3, libewf, JSON Pattern Matching</span>
-                                </div>
-                                <div class="spec-row">
-                                    <span class="spec-label"># Role</span>
-                                    <span class="spec-value">
-                                        · E01 이미지 자동 파싱 및 NTFS 파티션 탐지<br>
-                                        · 윈도우 LLM 앱 아티팩트 경로 패턴 분석 및 정의<br>
-                                        · dfVFS 기반 E01 이미지 파싱 엔진 구현<br>
-                                        · 카테고리별 자동 추출 로직 및 CLI 개발 (100%)
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a href="https://github.com/bbibbi0425/Forensic_extract_llm" target="_blank"
-                                class="btn-action primary">
-                                <i class="fab fa-github"></i> Repository
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image">
                         <img src="./etc/images/whitehat.png" alt="화이트햇스쿨 프로젝트">
                     </div>
                     <div class="card-content">
@@ -428,6 +427,42 @@
                         </div>
                         <div class="card-actions">
                             <a href="https://github.com/forensicbread/WHS_forensicbread" target="_blank"
+                                class="btn-action primary">
+                                <i class="fab fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="./etc/images/extract_llm.gif" alt="extract_llm 실행 화면">
+                    </div>
+                    <div class="card-content">
+                        <div class="text-content">
+                            <h4>LLM 포렌식 아티팩트 추출용 자동화 스크립트</h4>
+                            <p class="sub-title">Automated Script for LLM Forensic Artifact Extraction</p>
+                            <p class="desc">
+                                E01 디스크 이미지에서 LLM 애플리케이션(ChatGPT, Claude, LM Studio, Jan, 미정의 LLM 등)의 실행 흔적 / 사용자 정보 /
+                                프롬프트 / 파일 업로드 / 네트워크 아티팩트를 자동 수집·분류하는 포렌식 도구입니다.
+                            <div class="project-specs">
+                                <div class="spec-row">
+                                    <span class="spec-label"># Tech</span>
+                                    <span class="spec-value">Python, dfVFS, pytsk3, libewf, JSON Pattern Matching</span>
+                                </div>
+                                <div class="spec-row">
+                                    <span class="spec-label"># Role</span>
+                                    <span class="spec-value">
+                                        · E01 이미지 자동 파싱 및 NTFS 파티션 탐지<br>
+                                        · 윈도우 LLM 앱 아티팩트 경로 패턴 분석 및 정의<br>
+                                        · dfVFS 기반 E01 이미지 파싱 엔진 구현<br>
+                                        · 카테고리별 자동 추출 로직 및 CLI 개발 (100%)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/bbibbi0425/Forensic_extract_llm" target="_blank"
                                 class="btn-action primary">
                                 <i class="fab fa-github"></i> Repository
                             </a>
@@ -467,42 +502,6 @@
                             <a href="https://github.com/bbibbi0425/Dreamhack" target="_blank"
                                 class="btn-action primary">
                                 <i class="fas fa-book-open"></i> View Write-ups
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image">
-                        <img src="./etc/images/passsafe.png" alt="PASS SAFE">
-                    </div>
-                    <div class="card-content">
-                        <div class="text-content">
-                            <h4>우리의 비밀번호를 안전하게: Pass Safe</h4>
-                            <p class="sub-title">Keep your password safe: Pass Safe</p>
-                            <p class="desc">
-                                사용자가 자신의 비밀번호가 안전한지 검사하고, 강력하고 안전한 비밀번호를 생성 및 관리할 수 있는 서비스입니다.
-                            </p>
-                            <div class="project-specs">
-                                <div class="spec-row">
-                                    <span class="spec-label"># Tech</span>
-                                    <span class="spec-value">HTML, CSS, JavaScript, OpenSource(zxcvbn, Have I Been Pwned
-                                        API) </span>
-                                </div>
-                                <div class="spec-row">
-                                    <span class="spec-label"># Role</span>
-                                    <span class="spec-value">
-                                        · UI/UX 디자인 및 프론트엔드 개발<br>
-                                        · 비밀번호 보안 알고리즘 구현<br>
-                                        · API 연동 및 데이터 유출 확인 시스템 개발<br>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a href="https://github.com/bbibbi0425/DKU_OpenSource" target="_blank"
-                                class="btn-action primary">
-                                <i class="fab fa-github"></i> Repository
                             </a>
                         </div>
                     </div>
