@@ -280,15 +280,15 @@ ul {
 }
 
 .badge.award {
-    background-color: #FFF5F5;
-    color: #E53E3E;
-    border: 1px solid #FED7D7;
+    background-color: #FDF1EE;
+    color: #d94925;
+    border: 1px solid #f5c4b8;
 }
 
 .badge.paper {
-    background-color: #F0FFF4;
-    color: #38A169;
-    border: 1px solid #C6F6D5;
+    background-color: #F2F7EC;
+    color: #7db249;
+    border: 1px solid #c5dea8;
 }
 
 .badge.activity {
