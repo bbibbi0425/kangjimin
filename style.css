@@ -1022,6 +1022,14 @@ ul {
     transform: translateY(-2px);
 }
 
+.btn-action.in-progress {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    cursor: default;
+    pointer-events: none;
+}
+
 .card-actions.three-buttons {
     gap: 6px;
 }
